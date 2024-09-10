@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Diagnostics
+  GenerationTime="2024-06-05T16:24:32.1744889+02:00">
+  <Items>
+    <Diagnostic>
+      <DiagnosticType>Compile</DiagnosticType>
+      <Severity>Error</Severity>
+      <Path>dynamics://Class/ApplicationStartupEventManager_SItelemetry/Method/ApplicationStartupEventManager_onSystemStartup</Path>
+      <ElementType>Class Method</ElementType>
+      <Moniker>TypeNotFound</Moniker>
+      <Line>23</Line>
+      <Column>9</Column>
+      <EndLine>23</EndLine>
+      <EndColumn>116</EndColumn>
+      <Message>The name 'SItelemetryNET.Logger' does not denote a class, a table, or an extended data type.</Message>
+    </Diagnostic>
+  </Items>
+  <Aliases />
+</Diagnostics>

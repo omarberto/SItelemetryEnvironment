@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxTableExtension xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>SystemParameters.SItelemetry</Name>
+	<FieldGroupExtensions />
+	<FieldGroups>
+		<AxTableFieldGroup>
+			<Name>Neteye</Name>
+			<Label>Neteye Monitoring</Label>
+			<Fields>
+				<AxTableFieldGroupField>
+					<DataField>NeteyeAgentEnabled</DataField>
+				</AxTableFieldGroupField>
+				<AxTableFieldGroupField>
+					<DataField>NeteyeRemoteAddress</DataField>
+				</AxTableFieldGroupField>
+			</Fields>
+		</AxTableFieldGroup>
+	</FieldGroups>
+	<FieldModifications />
+	<Fields>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldEnum">
+			<Name>NeteyeAgentEnabled</Name>
+			<HelpText>Enable the monitoring agent</HelpText>
+			<Label>Neteye Agent Enabled</Label>
+			<EnumType>NoYes</EnumType>
+		</AxTableField>
+		<AxTableField xmlns=""
+			i:type="AxTableFieldString">
+			<Name>NeteyeRemoteAddress</Name>
+			<ExtendedDataType>Str1260</ExtendedDataType>
+			<HelpText>Neteye Remote Address</HelpText>
+			<IgnoreEDTRelation>Yes</IgnoreEDTRelation>
+			<Label>Neteye Remote Address</Label>
+		</AxTableField>
+	</Fields>
+	<FullTextIndexes />
+	<Indexes />
+	<Mappings />
+	<PropertyModifications />
+	<RelationExtensions />
+	<RelationModifications />
+	<Relations />
+</AxTableExtension>

@@ -1,0 +1,8 @@
+==================================
+Compile Warning: Class Method dynamics://Class/ApplicationStartupEventManager_SItelemetry/Method/ApplicationStartupEventManager_onSystemStartup: [(22,57),(22,93)]: Type 'SqlSystem' is marked InternalUseOnly and is not accessible from the current module 'SItelemetry' : This class is deprecated.
+Compile Warning: Class Method dynamics://Class/ApplicationStartupEventManager_SItelemetry/Method/ApplicationStartupEventManager_onSystemStartup: [(22,57),(22,93)]: Method 'managedConnectionString' or type 'SqlSystem' in which it is declared is marked InternalUseOnly and is not accessible from the current module 'SItelemetry' ': This class is deprecated'.
+Compile Warning: Class Method dynamics://Class/ApplicationStartupEventManager_SItelemetry/Method/ApplicationStartupEventManager_onSystemStartup: [(24,47),(24,83)]: Type 'SqlSystem' is marked InternalUseOnly and is not accessible from the current module 'SItelemetry' : This class is deprecated.
+Compile Warning: Class Method dynamics://Class/ApplicationStartupEventManager_SItelemetry/Method/ApplicationStartupEventManager_onSystemStartup: [(24,47),(24,83)]: Method 'managedConnectionString' or type 'SqlSystem' in which it is declared is marked InternalUseOnly and is not accessible from the current module 'SItelemetry' ': This class is deprecated'.
+==================================
+Errors: 0
+Warnings: 4

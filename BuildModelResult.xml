@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Diagnostics
+  GenerationTime="2024-08-26T20:27:17.4293202+02:00">
+  <Items>
+    <Diagnostic>
+      <DiagnosticType>Compile</DiagnosticType>
+      <Severity>Warning</Severity>
+      <Path>dynamics://Class/ApplicationStartupEventManager_SItelemetry/Method/ApplicationStartupEventManager_onSystemStartup</Path>
+      <ElementType>Class Method</ElementType>
+      <Moniker>InternalUseOnlyTypeInaccessible</Moniker>
+      <Line>22</Line>
+      <Column>57</Column>
+      <EndLine>22</EndLine>
+      <EndColumn>93</EndColumn>
+      <Message>Type 'SqlSystem' is marked InternalUseOnly and is not accessible from the current module 'SItelemetry' : This class is deprecated.</Message>
+    </Diagnostic>
+    <Diagnostic>
+      <DiagnosticType>Compile</DiagnosticType>
+      <Severity>Warning</Severity>
+      <Path>dynamics://Class/ApplicationStartupEventManager_SItelemetry/Method/ApplicationStartupEventManager_onSystemStartup</Path>
+      <ElementType>Class Method</ElementType>
+      <Moniker>InternalUseOnlyMethodInaccessible</Moniker>
+      <Line>22</Line>
+      <Column>57</Column>
+      <EndLine>22</EndLine>
+      <EndColumn>93</EndColumn>
+      <Message>Method 'managedConnectionString' or type 'SqlSystem' in which it is declared is marked InternalUseOnly and is not accessible from the current module 'SItelemetry' ': This class is deprecated'.</Message>
+    </Diagnostic>
+    <Diagnostic>
+      <DiagnosticType>Compile</DiagnosticType>
+      <Severity>Warning</Severity>
+      <Path>dynamics://Class/ApplicationStartupEventManager_SItelemetry/Method/ApplicationStartupEventManager_onSystemStartup</Path>
+      <ElementType>Class Method</ElementType>
+      <Moniker>InternalUseOnlyTypeInaccessible</Moniker>
+      <Line>24</Line>
+      <Column>47</Column>
+      <EndLine>24</EndLine>
+      <EndColumn>83</EndColumn>
+      <Message>Type 'SqlSystem' is marked InternalUseOnly and is not accessible from the current module 'SItelemetry' : This class is deprecated.</Message>
+    </Diagnostic>
+    <Diagnostic>
+      <DiagnosticType>Compile</DiagnosticType>
+      <Severity>Warning</Severity>
+      <Path>dynamics://Class/ApplicationStartupEventManager_SItelemetry/Method/ApplicationStartupEventManager_onSystemStartup</Path>
+      <ElementType>Class Method</ElementType>
+      <Moniker>InternalUseOnlyMethodInaccessible</Moniker>
+      <Line>24</Line>
+      <Column>47</Column>
+      <EndLine>24</EndLine>
+      <EndColumn>83</EndColumn>
+      <Message>Method 'managedConnectionString' or type 'SqlSystem' in which it is declared is marked InternalUseOnly and is not accessible from the current module 'SItelemetry' ': This class is deprecated'.</Message>
+    </Diagnostic>
+  </Items>
+  <Aliases />
+</Diagnostics>

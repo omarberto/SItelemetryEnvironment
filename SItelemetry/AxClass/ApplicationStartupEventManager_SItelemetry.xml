@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>ApplicationStartupEventManager_SItelemetry</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+/// <summary>
+///  https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/extensibility/startup-customizations
+/// </summary>
+class ApplicationStartupEventManager_SItelemetry
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>ApplicationStartupEventManager_onSystemStartup</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// called on system startup, aluncehs agents threads
+    /// </summary>
+    [SubscribesTo(classStr(ApplicationStartupEventManager), staticDelegateStr(ApplicationStartupEventManager, onSystemStartup))]
+    public static void ApplicationStartupEventManager_onSystemStartup()
+    {
+        d356Tracing.WinEvent::WriteInfo('new_log: '+ System.Environment::MachineName + ' partition: ' + strfmt('%1', SystemParameters::find().Partition));
+
+        d356Tracing.Logger::SendLogBase('AOSlog', 'onSystemStartup');
+        
+        System.Exception ex;
+        try
+        {
+            Microsoft.Dynamics.ApplicationPlatform.Environment.IApplicationEnvironment environment = Microsoft.Dynamics.ApplicationPlatform.Environment.EnvironmentFactory::GetApplicationEnvironment();
+
+            str managedConnectionString = d356Tracing.DbHelper::GetSqlConnectionString(environment);
+            d356Tracing.NeteyeOrchestratorController::Agent(managedConnectionString);
+            d356Tracing.TelegrafController::Agent(managedConnectionString);
+
+        }
+        catch (ex)
+        {
+            d356Tracing.Logger::SendLogBase('AOSlog', 'onSystemStartup failed with error ' + ex.Message);
+        }
+
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

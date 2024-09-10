@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxFormExtension xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="Microsoft.Dynamics.AX.Metadata.V6">
+	<Name>SystemParameters.SItelemetry</Name>
+	<ControlModifications />
+	<Controls>
+		<AxFormExtensionControl xmlns="">
+			<Name>FormExtensionControlfub1jfjx1</Name>
+			<FormControl xmlns=""
+				i:type="AxFormGroupControl">
+				<Name>Neteye</Name>
+				<Type>Group</Type>
+				<FormControlExtension
+					i:nil="true" />
+				<Controls>
+					<AxFormControl xmlns=""
+						i:type="AxFormCheckBoxControl">
+						<Name>Neteye_NeteyeAgentEnabled</Name>
+						<Type>CheckBox</Type>
+						<FormControlExtension
+							i:nil="true" />
+						<DataField>NeteyeAgentEnabled</DataField>
+						<DataSource>SystemParameters</DataSource>
+					</AxFormControl>
+					<AxFormControl xmlns=""
+						i:type="AxFormStringControl">
+						<Name>Neteye_NeteyeRemoteAddress</Name>
+						<Type>String</Type>
+						<FormControlExtension
+							i:nil="true" />
+						<DataField>NeteyeRemoteAddress</DataField>
+						<DataSource>SystemParameters</DataSource>
+					</AxFormControl>
+				</Controls>
+				<DataGroup>Neteye</DataGroup>
+				<DataSource>SystemParameters</DataSource>
+			</FormControl>
+			<Parent>GeneralBody</Parent>
+		</AxFormExtensionControl>
+	</Controls>
+	<DataSourceModifications />
+	<DataSourceReferences />
+	<DataSources />
+	<Parts />
+	<PropertyModifications />
+</AxFormExtension>
