@@ -1,0 +1,6 @@
+﻿Neteye=Neteye
+NeteyeAgentEnabled=Neteye agent enabled
+NeteyeAgentEnabledHelp=Neteye agent enabled.
+NeteyeParameters=Neteye parameters
+NeteyeRemoteAddress=Neteye remote address
+NeteyeRemoteAddressHelp=Neteye remote address.

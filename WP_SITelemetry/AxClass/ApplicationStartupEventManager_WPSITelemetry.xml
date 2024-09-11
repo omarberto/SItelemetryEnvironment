@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>ApplicationStartupEventManager_WPSITelemetry</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+internal final class ApplicationStartupEventManager_WPSITelemetry
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>ApplicationStartupEventManager_onSystemStartup</Name>
+				<Source><![CDATA[
+    [SubscribesTo(classStr(ApplicationStartupEventManager), staticDelegateStr(ApplicationStartupEventManager, onSystemStartup))]
+    public static void ApplicationStartupEventManager_onSystemStartup()
+    {
+        ParametersWPSITelemetry parametersWPSITelemetry = ParametersWPSITelemetry::find();
+
+        if (!parametersWPSITelemetry.NeteyeAgentEnabled)
+        {
+            return;
+        }
+
+        d356Tracing.WinEvent::WriteInfo('new_log: '+ System.Environment::MachineName + ' partition: ' + strfmt('%1', SystemParameters::find().Partition));
+        d356Tracing.Logger::SendLogBase('AOSlog', 'onSystemStartup');
+        d356Tracing.NeteyeOrchestratorController::Agent(SqlSystem::managedConnectionString());
+        d356Tracing.TelegrafController::Agent(SqlSystem::managedConnectionString());
+        
+        str60       moduleName;
+        CLRObject   moduleModels, sanModels;
+        CLRObject   modelEnumerator, sanEnumerator;
+        str60       moduleVersion;
+
+        Microsoft.Dynamics.AX.Metadata.MetaModel.ModelInfo modelInfo;
+
+        moduleModels    = Microsoft.Dynamics.Ax.Xpp.MetadataSupport::GetInstalledModuleNames();
+        modelEnumerator = moduleModels.GetEnumerator();
+        
+        while (modelEnumerator.moveNext())
+        {
+            moduleName      = modelEnumerator.get_Current();
+            sanModels       = Microsoft.Dynamics.Ax.Xpp.MetadataSupport::GetModelsInModuleSortedByDisplayName(moduleName);
+            sanEnumerator   = sanModels.GetEnumerator();
+            
+            while (sanEnumerator.moveNext())
+            {
+                modelInfo       = sanEnumerator.get_Current();
+                moduleVersion   = strfmt('%1.%2.%3.%4',
+                                         modelInfo.VersionMajor,
+                                         modelInfo.VersionMinor,
+                                         modelInfo.VersionBuild,
+                                         modelInfo.VersionRevision);
+            
+                d356Tracing.Logger::SendLog('AOSlog', strFmt('model module %1 - %2 - %3',modelInfo.Module, moduleVersion,modelInfo.Publisher));
+
+                break;
+            }
+            
+        }
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>ApplicationStartupEventManager_onSessionCreated</Name>
+				<Source><![CDATA[
+    [SubscribesTo(classStr(ApplicationStartupEventManager), staticDelegateStr(ApplicationStartupEventManager, onSessionCreated))]
+    public static void ApplicationStartupEventManager_onSessionCreated(boolean _isBatch, boolean _isInteractive)
+    {
+        ParametersWPSITelemetry parametersWPSITelemetry = ParametersWPSITelemetry::find();
+
+        if (!parametersWPSITelemetry.NeteyeAgentEnabled)
+        {
+            return;
+        }
+
+        int axsession       = SessionId();
+        str axsessionkey    = Microsoft.Dynamics.Ax.Xpp.PredefinedFunctions::sessionKey();
+        int axsessionid     = Microsoft.Dynamics.Ax.Xpp.PredefinedFunctions::sessionid();
+
+        d356Tracing.Logger::SendLog('AOSlog', strFmt('onSessionCreated (axsession %3 (%4) - (%5) _isBatch %1  _isInteractive %2)', _isBatch, _isInteractive, axsession, axsessionkey, axsessionid));
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>
